@@ -12,16 +12,7 @@ function writePassword() {
 // Function to generate a password 
 function generatePassword() {
 
-    // Inputing character options that can be randomly assigned to password. 
-    var characterOptions = {
-        numbers = "0123456789",
-        specialChar = "\"\\ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
-        lowerLet = "abcdefghijklmnopqrstuvwxyz",
-        upperLet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    }
-
     var generatorLength = prompt("How many characters do you want your password to be, it must be between 8-128.");
-
 
     // Validate User Input ----NOT WORKING
     function selectPasswordLength(userCharacters) {
@@ -39,19 +30,45 @@ function generatePassword() {
             return true;
     }
 
-    // Get random characters from each arrray the user selects - NOT DONE
-
+    // Inputing character options that can be randomly assigned to password. 
+    var characterOptions = {
+        numbers: "0123456789",
+        specialChar: "\"\\ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+        lowerLet: "abcdefghijklmnopqrstuvwxyz",
+        upperLet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
 
     // Setting the password parameters, i.e giving prompts for user to decide what is included in password
+    var parameters = confirm("")
+    paraNumbers = confirm("Select ok to confirm numbers will be incuded or cancel if you dont want numbers included");
+    paraSpecialChar = confirm("Select ok to confirm special characters will be included or cancell if you dontwant special characters included");
+    paraLowerLet = confirm("Select ok to confirm lower case letters will be included or cancel if you dont want lower case letters included");
+    paraUpperLet = confirm("Select ok to confirm upper case letters will be included or cancel if you dont want upper case letter to be included ");
 
 
-    var numbers = confirm("Select ok to confirm or cancel if you dont want numbers included");
-    var specialChar = confirm("Select ok to confirm or cancell if you dontwant special characters included");
-    var lowerLet = confirm("Select ok to confirm or cancel if you dont want lower case letters included");
-    var upperLet = confirm("Select ok to confirm or cancel if you dont want upper case letter to be included ");
+    // setting the condition of the array. 
+    if (paraNumbers) {
+        parameters += characterOptions.numbers
+    }
 
+    if (paraSpecialChar) {
+        parameters += characterOptions.specialChar
+    }
 
+    if (paraLowerLet) {
+        parameters += characterOptions.lowerLet
+    }
 
+    if (paraUpperLet) {
+        parameters += characterOptions.upperLet
+    }
+
+    var finalRandomPass = ""
+    for (i = 1; i <= generatorLength; i++) {
+        finalRandomPass += parameters.charAt(Math.floor(Math.random() * parameters.length))
+    }
+
+    return "finalRandomPass";
 
 }
 
