@@ -10,36 +10,51 @@ function writePassword() {
 }
 
 // Function to generate a password 
-function generatePassword() {
 
-    var generatorLength = prompt("How many characters do you want your password to be, it must be between 8-128.");
 
-    // Validate User Input ----NOT WORKING
-    function selectPasswordLength(userCharacters) {
-        if (isNaN(userCharacters)) {
-            alert("Enter a valid number.");
-            return false;
-        } else if (parseInt(userCharacters) < 8) {
-            alert("Password is too short, must be at least 8 characters long.");
-            return false;
-        } else if (parseInt(userCharacters) > 128) {
-            alert("Password is too long, must be less than 128 characters long.");
-            return false;
+// var generatorLength = prompt("How many characters do you want your password to be, it must be between 8-128."); - from // to - undo
 
-        } else
-            return true;
+// Validate User Input ----NOT WORKING -green out from 18to 31
+// function selectPasswordLength(userCharacters) {
+//     if (isNaN(userCharacters)) {
+//         alert("Enter a valid number.");
+//         return false;
+//     } else if (parseInt(userCharacters) < 8) {
+//         alert("Password is too short, must be at least 8 characters long.");
+//         return false;
+//     } else if (parseInt(userCharacters) > 128) {
+//         alert("Password is too long, must be less than 128 characters long.");
+//         return false;
+
+//     } else
+//         return true;
+// }
+
+// Inputing array options that can be randomly assigned to password. 
+var characterOptions = {
+    numbers: "0123456789",
+    specialChar: "\"\\ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+    lowerLet: "abcdefghijklmnopqrstuvwxyz",
+    upperLet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+}
+
+var generatePassword = function() {
+    // Ask user if they want to make a password 
+    var userChoice = window.prompt("How many characters do you want your password to be, it must be between 8-128.");
+    // if they dont want to make a password, press
+    if (!generatorLength) {
+        return
     }
 
-    // Inputing character options that can be randomly assigned to password. 
-    var characterOptions = {
-        numbers: "0123456789",
-        specialChar: "\"\\ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
-        lowerLet: "abcdefghijklmnopqrstuvwxyz",
-        upperLet: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    }
+    // Get random index from array options 
+    var index = Math.floor(Math.random() * parameters.length)
+    var parameters = characterOptions("")
+
+
+
 
     // Setting the password parameters, i.e giving prompts for user to decide what is included in password
-    var parameters = confirm("")
+    var parameters = ""
     paraNumbers = confirm("Select ok to confirm numbers will be incuded or cancel if you dont want numbers included");
     paraSpecialChar = confirm("Select ok to confirm special characters will be included or cancell if you dontwant special characters included");
     paraLowerLet = confirm("Select ok to confirm lower case letters will be included or cancel if you dont want lower case letters included");
@@ -66,15 +81,6 @@ function generatePassword() {
     var finalRandomPass = ""
     for (i = 1; i <= generatorLength; i++) {
         finalRandomPass += parameters.charAt(Math.floor(Math.random() * parameters.length))
-    }
-
-    return "finalRandomPass";
-
-    function writePassword() {
-        var password = generatePassword();
-        var passwordText = document.querySelector("#password");
-
-        passwordText.value = password;
     }
 
 }
