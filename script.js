@@ -69,7 +69,7 @@ function generatePassword() {
             var prePassWord = Math.floor(Math.random() * characterOptions.numbers.length)
             password += characterOptions.numbers[prePassWord]
             generatorLength--
-            console.log(password)
+            // console.log(password)
         }
 
         if (paraSpecialChar) {
@@ -78,7 +78,7 @@ function generatePassword() {
             var prePassWord = Math.floor(Math.random() * characterOptions.specialChar.length)
             password += characterOptions.specialChar[prePassWord]
             generatorLength--
-            console.log(password)
+            // console.log(password)
         }
 
         if (paraLowerLet) {
@@ -87,7 +87,7 @@ function generatePassword() {
             var prePassWord = Math.floor(Math.random() * characterOptions.lowerLet.length)
             password += characterOptions.lowerLet[prePassWord]
             generatorLength--
-            console.log(password)
+            // console.log(password)
         }
 
         if (paraUpperLet) {
@@ -96,7 +96,7 @@ function generatePassword() {
             var prePassWord = Math.floor(Math.random() * characterOptions.upperLet.length)
             password += characterOptions.upperLet[prePassWord]
             generatorLength--
-            console.log(password)
+            // console.log(password)
         }
 
 
