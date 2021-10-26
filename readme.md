@@ -42,3 +42,9 @@ An IF statement was created to generate the password. The same IF statement prin
 Finally, we could creat a for loop. This was made so the password legnth matched the input length selected by the user. After the for loop would meet its criteria the password would be generated. 
 
 ![for](assets/screenshots/for.png)
+
+## License
+  
+MIT License
+
+Copyright (c) 2021 Michael West
