@@ -1,4 +1,4 @@
-# Create your own web development portfolio landing page
+# Create a random password generator 
 
 ## Description
 We were taksed to create a random password generator that a user would be able to decided input elements.
